@@ -6,14 +6,14 @@ module Api
 
       # GET /albums
       def index
-        @albums = Album.all
+        albums = Album.all
 
-        render json: @albums
+        render json: {status: 'SUCCESS', message:'Loaded albums', data:albums},status: :ok
       end
 
       # GET /albums/1
       def show
-        render json: @album
+        render json: {status: 'SUCCESS', message:'Loaded album', data:album},status: :ok
       end
 
       # POST /albums

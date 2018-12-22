@@ -6,14 +6,14 @@ module Api
 
       # GET /members
       def index
-        @members = Member.all
+        members = Member.all
 
-        render json: @members
+        render json: {status: 'SUCCESS', message:'Loaded members', data:members},status: :ok
       end
 
       # GET /members/1
       def show
-        render json: @member
+        render json: {status: 'SUCCESS', message:'Loaded member', data:member},status: :ok
       end
 
       # POST /members

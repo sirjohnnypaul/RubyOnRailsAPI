@@ -4,8 +4,8 @@ module Api
             before_action :validate_api_key!
             
             def index
-                @albums = Album.where(band_id: params[:band_id])
-                render json: @albums
+                albums = Album.where(band_id: params[:band_id])
+                render json: {status: 'SUCCESS', message:'Loaded albums', data:albums},status: :ok
             end
 
             def has_valid_api_key?

@@ -6,14 +6,14 @@ module Api
 
       # GET /bands
       def index
-        @bands = Band.all
+        bands = Band.all
 
-        render json: @bands
+        render json: {status: 'SUCCESS', message:'Loaded bands', data:bands},status: :ok
       end
 
       # GET /bands/1
       def show
-        render json: @band
+        render json: {status: 'SUCCESS', message:'Loaded band', data:band},status: :ok
       end
 
       # POST /bands

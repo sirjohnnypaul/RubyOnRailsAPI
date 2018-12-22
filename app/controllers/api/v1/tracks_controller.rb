@@ -6,14 +6,14 @@ module Api
 
       # GET /tracks
       def index
-        @tracks = Track.all
+        tracks = Track.all
 
-        render json: @tracks
+        render json: {status: 'SUCCESS', message:'Loaded tracks', data:tracks},status: :ok
       end
 
       # GET /tracks/1
       def show
-        render json: @track
+        render json: {status: 'SUCCESS', message:'Loaded track', data:track},status: :ok
       end
 
       # POST /tracks
