@@ -13,6 +13,7 @@ module Api
 
       # GET /albums/1
       def show
+        album = Album.find(params[:id])
         render json: {status: 'SUCCESS', message:'Loaded album', data:album},status: :ok
       end
 
@@ -49,7 +50,7 @@ module Api
 
         # Only allow a trusted parameter "white list" through.
         def album_params
-          params.require(:album).permit(:title, :body, :albumcoverurl, :band_id)
+          params.require(:album).permit(:id, :title, :body, :albumcoverurl, :band_id)
         end
 
         def has_valid_api_key?

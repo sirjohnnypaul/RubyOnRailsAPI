@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :albums
       resources :bands
 
+      get 'albums/id' => 'albums/#show'
       get 'albums_by_band_id/band_id' => 'albums_by_band_id/#index'
       get 'tracks_by_album_id/album_id' => 'tracks_by_album_id/#index'
 
