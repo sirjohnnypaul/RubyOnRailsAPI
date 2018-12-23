@@ -7,7 +7,7 @@ module Api
 
             def index
                 bandname = Band.where(id: params[:id]).select(:name).take
-                render json: bandname , status: :ok
+                render json: {status: 'SUCCESS', message:'Loaded band', data:bandname},status: :ok
             end
 
             def set_band
