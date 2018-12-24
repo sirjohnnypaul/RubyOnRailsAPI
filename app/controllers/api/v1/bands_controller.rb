@@ -13,6 +13,7 @@ module Api
 
       # GET /bands/1
       def show
+        band = Band.find(params[:id])
         render json: {status: 'SUCCESS', message:'Loaded band', data:band},status: :ok
       end
 
